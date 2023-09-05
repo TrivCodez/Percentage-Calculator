@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Percentage Calculator
+  </title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+ </head>
+ <body>
+  <div class="container">
+   <h1>
+    Percentage Calculator
+   </h1>
+   <form id="percentageForm">
+    <div class="form-group">
+     <label for="number">
+      Number:
+     </label>
+     <input class="form-control" id="number" required="" type="number"/>
+    </div>
+    <div class="form-group">
+     <label for="percentage">
+      Percentage:
+     </label>
+     <input class="form-control" id="percentage" required="" type="number"/>
+    </div>
+    <button class="btn" type="submit">
+     Calculate
+    </button>
+   </form>
+  </div>
+  <!-- Bootstrap & jQuery JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+  </script>
+  <!-- Custom JS -->
+ </body>
+</html>
+<style>
+  body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fade-in 1s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 36px;
+            margin-bottom: 40px;
+            animation: slide-in 1s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            background-color: #ff5e62;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #ff3c3f;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+</style>
+<script>
+  $(document).ready(function() {
+            $('#percentageForm').submit(function(e) {
+                e.preventDefault();
+                var number = parseFloat($('#number').val());
+                var percentage = parseFloat($('#percentage').val());
+                var result = (number * percentage) / 100;
+                alert('Result: ' + result.toFixed(2));
+            });
+        });
+</script>
